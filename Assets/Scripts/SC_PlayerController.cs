@@ -8,13 +8,17 @@ public class SC_PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
 
     private float xInput;
-    private float zInput;
+    //private float zInput;
+    public float gravity = 20.0f;
+    bool grounded = false;
+    Vector3 defaultScale;
 
 
     // Start is called before the first frame update
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
@@ -31,11 +35,11 @@ public class SC_PlayerController : MonoBehaviour
     private void ProcessInputs()
     {
         xInput = Input.GetAxis("Horizontal");
-        zInput = Input.GetAxis("Vertical");
+        //zInput = Input.GetAxis("Vertical");
     }
 
     private void Move()
     {
-        rb.AddForce(new Vector3(xInput, 0f, zInput) * moveSpeed);
+        rb.AddForce(new Vector3(xInput, 0f) * moveSpeed);
     }
 }
