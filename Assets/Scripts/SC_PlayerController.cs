@@ -27,11 +27,27 @@ public class SC_PlayerController : MonoBehaviour
         ProcessInputs();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         Move();
+        grounded = false;
     }
 
+    void OnCollisionStay()
+    {
+        grounded = true;
+        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Finish")
+        {
+            //print("GameOver!");
+            SC_GroundGenerator.instance.gameOver = true;
+        }
+    }
+    
     private void ProcessInputs()
     {
         xInput = Input.GetAxis("Horizontal");
