@@ -1,3 +1,7 @@
+/*
+Author of script: Valentino Glave
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
