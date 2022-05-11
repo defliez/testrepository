@@ -2,40 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour { 
+    
+    public float speed = 5;
     public Rigidbody rb;
-    public float moveSpeed = 10f;
 
-    private float xInput;
-    private float zInput;
+    float horizontalInput;
 
-
-    // Start is called before the first frame update
-    void Awake()
+    private void FixedUpdate ()
     {
-        rb = GetComponent<Rigidbody>();
+        Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 horizontalMove = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + forwardMove + horizontalMove);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        ProcessInputs();
+    private void Update () {
+        horizontalInput = Input.GetAxis("Horizontal");
     }
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
-
-    private void ProcessInputs()
-    {
-        xInput = Input.GetAxis("Horizontal");
-        zInput = Input.GetAxis("Vertical");
-    }
-
-    private void Move()
-    {
-        rb.AddForce(new Vector3(xInput, 0f, zInput) * moveSpeed);
-    }
 }
