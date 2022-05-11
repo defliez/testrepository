@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ferit.unity
     guid: cc33cfae32a1c4b9d86b33cfc1da9f8b
+  - enabled: 1
+    path: Assets/Scenes/Valentino.unity
+    guid: 0570b9c4ea1a64c0183257fa102940f2
   m_configObjects: {}
