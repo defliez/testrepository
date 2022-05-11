@@ -14,7 +14,7 @@ public class LevelController : MonoBehaviour
         
         for (int i = 0; i < drawDistance; i++) {
 
-            GameObject newLevelPiece = Instantiate(levelPieces[0].prefab, new Vector3(0f, 0f, pieceLength * i), Quantum.identity);
+            //GameObject newLevelPiece = Instantiate(levelPieces[0].prefab, new Vector3(0f, 0f, pieceLength * i), Quantum.identity);
         }
     }
     
