@@ -103,12 +103,12 @@ public class SC_GroundGenerator : MonoBehaviour
             if (!gameStarted)
             {
                 GUI.color = Color.red;
-                GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 100, 200, 200), "Press 'Space' to start");
+                GUI.Label(new Rect(Screen.width / 2 - 70, Screen.height / 2 - 500, 200, 200), "Press 'Space' to start");
             }
         }
 
 
-        GUI.color = Color.green;
-        GUI.Label(new Rect(5, 5, 200, 25), "Score: " + ((int)score));
+        //GUI.color = Color.green;
+        //GUI.Label(new Rect(5, 5, 200, 25), "Score: " + ((int)score));
     }
 }
