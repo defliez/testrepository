@@ -62,6 +62,11 @@ public class SC_GroundGenerator : MonoBehaviour
             score += Time.deltaTime * movingSpeed;
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
+
         if (mainCamera.WorldToViewportPoint(spawnedTiles[0].endPoint.position).z < 0)
         {
             //Move the tile to the front if it's behind the Camera
@@ -88,6 +93,8 @@ public class SC_GroundGenerator : MonoBehaviour
                     gameStarted = true;
                 }
             }
+
+            
         }
     }
 
