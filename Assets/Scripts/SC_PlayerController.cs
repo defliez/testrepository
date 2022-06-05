@@ -12,7 +12,6 @@ public class SC_PlayerController : MonoBehaviour
     public float moveSpeed = 10f;
 
     private float xInput;
-    //private float zInput;
     public float gravity = 20.0f;
     bool grounded = false;
     Vector3 defaultScale;
@@ -55,7 +54,6 @@ public class SC_PlayerController : MonoBehaviour
     private void ProcessInputs()
     {
         xInput = Input.GetAxis("Horizontal");
-        //zInput = Input.GetAxis("Vertical");
     }
 
     private void Move()
